@@ -64,6 +64,19 @@ def get_configs(name) -> TrainingConfig:
             model_name="gpt2-medium/dropout",
             hf_model="gpt2-medium",
         )
+    elif name == "gpt2/lora":
+        return TrainingConfig(
+            n_layers=12,
+            n_heads=12,
+            embedding_dim=768,
+            dropout_rate=0.2,
+            use_bias=True,
+            block_size=1024,
+            vocab_size=50257,
+            lora_rank=1,
+            model_name="gpt2/lora-dropout",
+            hf_model="gpt2",
+        )        
     elif name == "gpt2-medium/lora":
         return TrainingConfig(
             n_layers=24,
